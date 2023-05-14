@@ -1,0 +1,45 @@
+<div class="container">
+    <div class="userForm">
+        <form>
+            <label for="login" class="userForm__label">Login</label><br>
+            <input type="text" class="userForm__login" name="login" placeholder="Enter login" pattern="{{ regExp.login}}" [(ngModel)]="user.login" [ngClass]="{'wrong': inputWrong1}"><br>
+            <label for="password" class="userForm__label">Password</label><br>
+            <input type="password"class="userForm__password" name="password" placeholder="Enter password" pattern="{{ regExp.password}}" [ngClass]="{'wrong': inputWrong2}" [(ngModel)]="user.password" ><br>
+            <label for="email" class="userForm__label">Email adress</label><br>
+            <input type="text" class="userForm__email" name="email" placeholder="Enter email" pattern="{{ regExp.email}}" [ngClass]="{'wrong': inputWrong3}" [(ngModel)]="user.email"><br>
+        </form>
+        <div class="userForm__add-btn" *ngIf="isBtn" (click)="addUser()">Add user</div>
+        <div class="userForm__edit-btn" *ngIf="!isBtn" (click)="saveEditUser()">Edit user</div>
+    </div>
+    <table class="usersData">
+        <thead class="usersData__thead">
+            <tr class="usersData__tr">
+                <th>#</th>
+                <th>Login</th>
+                <th>Password</th>
+                <th>Email</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="usersData__tr" *ngFor="let user of usersArray; let i=index">
+                <td>{{ i+1 }}</td>
+                <td>{{ user.login }}</td>
+                <td>{{ user.password }}</td>
+                <td>{{ user.email }}</td>
+                <td>
+                    <button type="button" class="usersData__btn usersData__btn-edit" (click)="editUser(i)">
+                        Edit
+                    </button>
+                </td>
+                <td>
+                    <button type="button" class="usersData__btn usersData__btn-delete" (click)="deleteUser(i)"
+                        [disabled]="!isBtn">
+                        Delete
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

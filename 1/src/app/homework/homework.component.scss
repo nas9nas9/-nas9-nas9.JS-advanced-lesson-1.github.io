@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family:Verdana, Geneva, Tahoma, sans-serif
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding: 40px;
+}
+.userForm {
+    width: 600px;
+    padding-left: 60px;
+    margin-right: 20px;
+    &__label {
+        font-size: 20px;
+    }
+    &__login,
+    &__password,
+    &__email {
+        width: 500px;
+        height: 35px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        outline: none;
+        border: 3px solid lightgray;
+        &:focus{
+            border: 3px solid rgb(0, 195, 255);
+        } 
+    }
+    &__add-btn {
+        width: 100px;
+        height: 40px;
+        border-radius: 10px;
+        background-color: green;
+        color: white;
+        font-size: 15px;
+        text-align: center;
+        padding: 9px;
+        margin-top: 20px;
+        &:hover {
+            background-color: white;
+            color: green;
+            cursor: pointer;
+            border: 3px solid green;
+        }
+    }
+    &__edit-btn {
+        width: 100px;
+        height: 40px;
+        border-radius: 10px;
+        background-color: green;
+        color: white;
+        font-size: 15px;
+        text-align: center;
+        padding: 9px;
+        margin-top: 20px;
+        position: relative;
+        bottom: 10px;
+        &:hover {
+            background-color: white;
+            color: green;
+            cursor: pointer;
+            border: 3px solid green;
+        }
+    }
+
+}
+.wrong {
+    border-color: red;
+    &:focus {
+        border-color: red;
+    }
+}
+.usersData {
+    width: 100%;
+    margin-top: 28px;
+    border-collapse: collapse;
+    &__tr {
+        height: 65px;
+        border-top: 1px solid black;
+        font-size: 16px;
+    }
+    &__thead tr {
+        height: 44px;
+        border-bottom: 2px solid black;
+        color: black;
+        text-align: left;
+    }
+    th, td {
+        padding: 0 18px 0 12px;
+    }
+    &__btn {
+        height: 40px;
+        padding: 0 15px;
+        border-radius: 5px;
+        border: none;
+        outline: none;
+        font-size: 16px;
+        &-edit {
+            background-color: yellow;
+            &:hover {
+                background-color: rgb(195, 195, 7);
+                color: black;
+            }
+         
+        }
+        &-delete {
+            background-color: red;
+            color: white;
+            &:hover {
+                background-color: rgb(210, 38, 38);
+            }
+
+        }
+    }
+}
